@@ -5,10 +5,10 @@ import axios from 'axios'
 
 
 const App = ()  => {
-  const onFinish =  values  => {
-   let data= axios.post('http://localhost:3000/createuser',{
+  const onFinish = async values  => {
+   let data=await axios.post('http://localhost:3000/api/v1/authentication/registration',{
     username:values.username,
-    email:values.username,
+    email:values.email,
     password:values.password
 
    })
