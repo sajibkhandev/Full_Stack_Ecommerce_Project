@@ -1,8 +1,12 @@
 const express = require('express')
 const cors =require('cors')
 const route  = require('./route')
+const mongobdConfig = require('./dbConfig/mongobdConfig')
+
 const app = express()
 const port = 3000
+
+mongobdConfig()
 
 // Middlewars
 app.use(cors())
