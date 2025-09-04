@@ -49,10 +49,11 @@ const registrationController=(req,res)=>{
             password:hash
 
         })
-        
-        
         data.save()
         emailVerification(email)
+
+
+        res.send(req.body)
    
    });
         

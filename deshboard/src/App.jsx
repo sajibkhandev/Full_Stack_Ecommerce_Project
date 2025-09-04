@@ -11,7 +11,17 @@ const App = ()  => {
     email:values.email,
     password:values.password
 
-   })
+   }
+   ,
+   {
+    headers:{
+      Authorization:"dfsdfsdfsdfsd"
+    }
+
+   }
+  
+  
+  )
    console.log(data);
    
 };
