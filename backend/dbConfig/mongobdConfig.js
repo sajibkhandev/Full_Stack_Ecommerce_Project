@@ -1,10 +1,8 @@
-// intesmern2401
-// 1eXajOHT5pJOLza2
-// test
+
 const mongoose = require('mongoose');
 
 const mongobdConfig =()=>{
-    mongoose.connect('mongodb+srv://intesmern2401:1eXajOHT5pJOLza2@cluster0.hegojkr.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0')
+    mongoose.connect(`mongodb+srv://${process.env.DATABASE_USERNAME}:${process.env.DATABASE_PASSWORD}@cluster0.hegojkr.mongodb.net/${process.env.DATABASE_NAME}?retryWrites=true&w=majority&appName=Cluster0`)
   .then(() => console.log('Connected!'));
 
 }

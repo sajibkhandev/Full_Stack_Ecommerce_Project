@@ -1,7 +1,8 @@
 const express =require('express')
 const _ =express.Router()
 const Auth=require('./api')
+let Api=process.env.API_BASE_URL
 
-_.use('/api/v1',Auth)
+_.use(Api,Auth)
 
 module.exports=_

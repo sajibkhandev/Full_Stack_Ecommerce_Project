@@ -9,7 +9,7 @@ const userSchema =require('../models/userSchema')
 
 const bcrypt = require('bcrypt');
 
-const registrationController=(req,res)=>{
+const registrationController=async (req,res)=>{
     let {username,email,password}=req.body
     if(!username){
         res.send({"errors":"Give a Username"})
@@ -42,20 +42,30 @@ const registrationController=(req,res)=>{
 
     }
     else{
-       bcrypt.hash(password, 10, function(err, hash) {
+
+     let existinguser= await userSchema.find({email:email})
+
+     if(existinguser.length>0){
+          res.send({error:`${existinguser[0].email} already in user`})
+     }else{
+
+        bcrypt.hash(password, 10, function(err, hash) {
          let data=new userSchema({
             username:username,
             email:email,
             password:hash
-
         })
         data.save()
         emailVerification(email)
-
-
-        res.send(req.body)
+     //    res.send(req.body)
+        res.send("Registration done")
    
    });
+     }
+     
+
+
+       
         
     }
 
