@@ -8,3 +8,6 @@ const mongobdConfig =()=>{
 }
 
 module.exports=mongobdConfig
+
+
+// mongodb+srv://intesmern2401:1eXajOHT5pJOLza2@cluster0.hegojkr.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0

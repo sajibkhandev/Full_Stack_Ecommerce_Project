@@ -1,6 +1,6 @@
 const secureApi=(req,res,next)=>{
     
-    if(req.headers.authorization=="dfsdfsdfsdfsd"){
+    if(req.headers.authorization==process.env.MIDDLEWER_PASS){
         next()
 
     }else{

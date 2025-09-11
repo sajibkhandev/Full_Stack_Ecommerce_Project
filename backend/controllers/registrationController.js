@@ -6,6 +6,7 @@ const passwordRegexLength = require("../helpers/passwordRegexLength")
 const passwordRegexSmallLetter = require("../helpers/passwordRegexSmallLetter")
 const passwordRegexSpecilChartor = require("../helpers/passwordRegexSpecilChartor")
 const userSchema =require('../models/userSchema')
+const otpGenerator = require('otp-generator')
 
 const bcrypt = require('bcrypt');
 
@@ -48,20 +49,31 @@ const registrationController=async (req,res)=>{
      if(existinguser.length>0){
           res.send({error:`${existinguser[0].email} already in user`})
      }else{
+          let otp=otpGenerator.generate(6, 
+               { 
+               upperCaseAlphabets: false,
+               lowerCaseAlphabets:false,
+               specialChars: false 
+               });
+          console.log(otp);
+          
 
         bcrypt.hash(password, 10, function(err, hash) {
          let data=new userSchema({
             username:username,
             email:email,
-            password:hash
+            password:hash,
+            otp:otp
         })
         data.save()
-        emailVerification(email)
+        emailVerification(email,otp)
      //    res.send(req.body)
         res.send("Registration done")
    
    });
      }
+
+    
      
 
 
