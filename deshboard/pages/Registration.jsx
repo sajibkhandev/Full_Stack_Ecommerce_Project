@@ -25,7 +25,8 @@ const Registration = ()  => {
   
   )
   if(data.data=="Registration done"){
-     navigate(`/otp/${values.email}`)
+    console.log("Check Your email");
+    
 
   }
   
@@ -80,6 +81,7 @@ const onFinishFailed = errorInfo => {
       </Button>
     </Form.Item>
   </Form>
+  <Button className='forget-password'>Forget Password</Button>
       
     </div>
   )
