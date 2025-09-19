@@ -5,9 +5,11 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-import Registration from '../pages/registration';
-import Login from '../pages/Login';
-import Otp from '../pages/Otp';
+import Registration from './pages/Registration';
+import Login from './pages/Login';
+import Otp from './pages/Otp';
+import ForgetPassword from './pages/ForgetPassword';
+import ChangePassword from './pages/ChangePassword';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -15,6 +17,8 @@ const router = createBrowserRouter(
       <Route path="/" element={<Registration />}></Route>
       <Route path="/login" element={<Login />}></Route>
       <Route path="/otp/:email/:otpcode" element={<Otp />}></Route>
+      <Route path="/forgetpassword" element={<ForgetPassword />}></Route>
+      <Route path="/changepassword/:email" element={<ChangePassword />}></Route>
     </Route>
   )
 );
