@@ -1,29 +1,29 @@
 import React from 'react'
 import { Button, Checkbox, Form, Input } from 'antd';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios'
 
 const ChangePassword = () => {
+      let navigate=useNavigate()
       let params = useParams()
       const onFinish = async values  => {
       let data = await axios.post('http://localhost:3000/api/v1/authentication/changepassword', {
     
-      email: "sajibkhan.cit.bd@gmail.com",
-      password: "123244"
+      email: params.email,
+      password: values.password
 
     }
       
 
     )
-    // if (data.data == "Registration done") {
-    //   toast.success("Check Your Email For Verification");
+    if (data.data.success=="Password Chnaged") {
+      navigate('/login')
 
+    }else{
+      toast.error("Try Againg")
+    }
 
-    // }else{
-    //   toast.error("Try Againg")
-    // }
-
-    console.log(data);
+  
 
   
 

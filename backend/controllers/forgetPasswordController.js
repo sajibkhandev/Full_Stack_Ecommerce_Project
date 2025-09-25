@@ -17,7 +17,7 @@ const forgetPasswordController=async(req,res)=>{
     const info = await transporter.sendMail({
         from: 'intesmern2401@gmail.com',
         to: email,
-        subject: "Email Verification",
+        subject: "Email Reset",
         text: "Hello world?", 
         html: `Please Change Your password <a href=http://localhost:5173/changepassword/${existinguser.email} style="background-color:#00f;padding:10px 20px;border-radius:10px;color:#fff;font-size:20px;font-weight:500;text-decoration:none;margin-bottom:30px;display:inline-block">Reset Here</a>`, 
       });
