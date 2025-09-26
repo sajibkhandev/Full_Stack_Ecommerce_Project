@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, Checkbox, Form, Input } from 'antd';
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     let navigate=useNavigate()
@@ -80,10 +80,11 @@ const onFinishFailed = errorInfo => {
 
     <Form.Item label={null}>
       <Button type="primary" htmlType="submit">
-        Submit
+        Login
       </Button>
     </Form.Item>
   </Form>
+  <Link to='/forgetpassword'><Button className='ml-[150px]'>Forget Password</Button></Link>
    </>
   )
 }

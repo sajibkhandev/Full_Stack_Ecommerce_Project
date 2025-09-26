@@ -12,6 +12,7 @@ import ForgetPassword from './pages/ForgetPassword';
 import ChangePassword from './pages/ChangePassword';
 import Home from './pages/Home';
 
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
@@ -21,6 +22,7 @@ const router = createBrowserRouter(
       <Route path="/forgetpassword" element={<ForgetPassword />}></Route>
       <Route path="/changepassword/:email" element={<ChangePassword />}></Route>
       <Route path="/home" element={<Home />}></Route>
+     
     </Route>
   )
 );

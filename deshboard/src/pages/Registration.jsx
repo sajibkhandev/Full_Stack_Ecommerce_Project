@@ -93,11 +93,18 @@ const Registration = () => {
 
         <Form.Item label={null}>
           <Button type="primary" htmlType="submit">
-            Submit
+            Sign Up
           </Button>
         </Form.Item>
       </Form>
-      <Link to='/forgetpassword'><Button className='forget-password'>Forget Password</Button></Link>
+      
+      <br />
+      <br />
+      <div className='ml-[200px] text-red-500'>
+        If you have a Account? <Link to='/login'><Button type="primary" htmlType="submit"> Login</Button></Link>
+
+      </div>
+      
 
     </div>
   )
