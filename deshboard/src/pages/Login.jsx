@@ -3,8 +3,11 @@ import { Button, Checkbox, Form, Input } from 'antd';
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux'
+import { activeuser } from '../slices/userInfoSlice';
 
 const Login = () => {
+  let dispatch=useDispatch()
     let navigate=useNavigate()
     const onFinish = async values  => {
 
@@ -27,6 +30,9 @@ const Login = () => {
     }
     else{
       navigate('/home')
+      dispatch(activeuser(data.data))
+      localStorage.setItem("activeuser",JSON.stringify(data.data))
+      
       
     }
 };

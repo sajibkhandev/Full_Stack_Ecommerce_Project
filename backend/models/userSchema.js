@@ -21,11 +21,6 @@ const userSchema=new Schema({
         default:false
     },
     otp:String
-    
-
-
-
-    
 
 })
 module.exports=mongoose.model('UserList', userSchema)

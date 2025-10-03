@@ -1,6 +1,7 @@
 import React from 'react'
 import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
 import { Menu, Col, Row } from 'antd';
+import {  Outlet, useNavigate } from 'react-router-dom'
 
 
 
@@ -53,7 +54,7 @@ const items = [
     children: [
 
       {
-        key: '/deshboard/addcategory',
+        key: '/home/addcategory',
         label: 'Add Category',
 
       },
@@ -74,7 +75,7 @@ const items = [
     children: [
 
       {
-        key: '/deshboard/addsubcategory',
+        key: '/home/addsubcategory',
         label: 'Add Subcategory',
 
       },
@@ -114,15 +115,19 @@ const items = [
 
 const Home = () => {
 
+  let navigate=useNavigate()
+  
+
 
   const onClick = e => {
     console.log( e.key);
+    navigate(e.key)
   }
   return (
     <>
 
       <Row>
-        <Col span={8}>
+        <Col span={4}>
           <h2 className='ml-6 my-4 text-2xl font-semibold'>Dashboard</h2>
           <Menu
             onClick={onClick}
@@ -132,8 +137,8 @@ const Home = () => {
             mode="inline"
             items={items}
           /></Col>
-        <Col span={16}>
-           category
+        <Col className='my-5' span={20}>
+           <Outlet />
         </Col>
       </Row>
 

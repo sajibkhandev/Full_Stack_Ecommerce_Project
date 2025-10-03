@@ -16,6 +16,7 @@ const loginController=async(req,res)=>{
     console.log(result);
     if(result){
         res.send({
+            id:existingUser._id,
             username:existingUser.username,
             email:existingUser.email,
             role:existingUser.role,
