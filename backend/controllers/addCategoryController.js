@@ -15,7 +15,7 @@ const addCategoryController=async(req,res)=>{
             ownerId:ownerId,
          })
          category.save()
-         res.send({success:"Category Created"})
+         res.send({success:"Category has been Created and wait for admin approval"})
 
 
       }

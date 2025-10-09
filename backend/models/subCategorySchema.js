@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const categorySchema=new Schema({
+const subCategorySchema=new Schema({
    
     name:{
         type:String,
@@ -13,6 +13,11 @@ const categorySchema=new Schema({
         ref:"UserList"
 
     },
+    categoryId:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"Category"
+
+    },
     status:{
         type:String,
         emum:["waitting","rejected","approval"],
@@ -20,4 +25,4 @@ const categorySchema=new Schema({
     }
 
 })
-module.exports=mongoose.model('Category', categorySchema)
+module.exports=mongoose.model('SubCategory', subCategorySchema)
