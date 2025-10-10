@@ -13,6 +13,8 @@ import ChangePassword from './pages/ChangePassword';
 import Home from './pages/Home';
 import AddCategory from './pages/AddCategory';
 import AddSubCategory from './pages/AddSubCategory';
+import ViewCategory from './pages/ViewCategory';
+import ViewSubCategory from './pages/ViewSubCategory';
 
 
 const router = createBrowserRouter(
@@ -26,6 +28,8 @@ const router = createBrowserRouter(
       <Route path="/home" element={<Home />}>
           <Route path="addcategory" element={<AddCategory />}></Route>
           <Route path="addsubcategory" element={<AddSubCategory />}></Route>
+          <Route path="viewcategory" element={<ViewCategory />}></Route>
+          <Route path="viewsubcategory" element={<ViewSubCategory />}></Route>
 
       </Route>
      

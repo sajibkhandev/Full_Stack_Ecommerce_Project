@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Button, Checkbox, Form, Input, Select } from 'antd';
 import axios from 'axios'
 import { useSelector } from 'react-redux';
+ import { ToastContainer, toast } from 'react-toastify';
 
 const AddSubCategory = () => {
   let [category, setCategory] = useState([])
@@ -17,7 +18,15 @@ const AddSubCategory = () => {
 
     }
     )
-    console.log(data);
+    if (data.data.success) {
+         toast.success("Sub Category has been created wait for admin approval");
+    
+    
+        } else if (data.data.error) {
+          toast.error("Sub Category Already ableble");
+    
+    
+        }
 
   };
   const onFinishFailed = errorInfo => {
@@ -105,6 +114,19 @@ const AddSubCategory = () => {
           Create
         </Button>
       </Form.Item>
+       <ToastContainer
+              position="top-center"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick={false}
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="light"
+      
+            />
     </Form>
   )
 }

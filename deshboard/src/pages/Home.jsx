@@ -13,11 +13,11 @@ const items = [
     icon: <MailOutlined />,
     children: [
       {
-        key: '/deshboard/merchant',
+        key: '/home/merchant',
         label: 'Merchant',
       },
       {
-        key: '/deshboard/user',
+        key: '/home/user',
         label: 'User',
 
       },
@@ -33,12 +33,12 @@ const items = [
     children: [
 
       {
-        key: '/deshboard/addproduct',
+        key: '/home/addproduct',
         label: 'Add Product',
 
       },
       {
-        key: '/deshboard/viewproduct',
+        key: '/home/viewproduct',
         label: 'View Product',
 
       },
@@ -59,7 +59,7 @@ const items = [
 
       },
       {
-        key: '/deshboard/viewcategory',
+        key: '/home/viewcategory',
         label: 'View Category',
 
       },
@@ -80,7 +80,7 @@ const items = [
 
       },
       {
-        key: '/deshboard/viewsubcategory',
+        key: '/home/viewsubcategory',
         label: 'View Subcategory',
 
       },
@@ -96,12 +96,12 @@ const items = [
     children: [
 
       {
-        key: '/deshboard/adddiscount',
+        key: '/home/adddiscount',
         label: 'Add Discount',
 
       },
       {
-        key: '/deshboard/viewdiscount',
+        key: '/home/viewdiscount',
         label: 'View Discount',
 
       },

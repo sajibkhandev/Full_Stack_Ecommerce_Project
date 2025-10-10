@@ -2,6 +2,7 @@ import React from 'react'
 import { Button, Checkbox, Form, Input } from 'antd';
 import { useSelector } from 'react-redux'
 import axios from 'axios';
+ import { ToastContainer, toast } from 'react-toastify';
 
 const AddCategory = () => {
   let userInfo = useSelector(state => state.activeuser.value)
@@ -15,7 +16,17 @@ const AddCategory = () => {
 
     }
     )
-    console.log(data);
+    if (data.data.success) {
+     toast.success("Category has been created wait for admin approval");
+
+
+    } else if (data.data.error) {
+      toast.error("Category Already ableble");
+
+
+    }
+
+
 
   };
   const onFinishFailed = errorInfo => {
@@ -45,6 +56,20 @@ const AddCategory = () => {
           Create
         </Button>
       </Form.Item>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+
+      />
+
     </Form>
   )
 }
