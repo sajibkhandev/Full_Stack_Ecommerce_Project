@@ -6,6 +6,7 @@ const mongobdConfig = require('./dbConfig/mongobdConfig')
 
 const app = express()
 const port = 3000
+const path =require('path')
 
 mongobdConfig()
 
@@ -13,6 +14,8 @@ mongobdConfig()
 app.use(cors())
 app.use(express.json())
 app.use(route)
+
+app.use('/uploads',express.static(path.join(__dirname,"uploads")))
 
 
 
