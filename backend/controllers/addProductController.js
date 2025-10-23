@@ -1,7 +1,9 @@
 const Product=require('../models/productSchema')
 
 const addProductController=async(req,res)=>{
-   let {name,des,avatar}=req.body
+   let {name,des,avatar,sellprice,regularprice,slug}=req.body
+  
+   
    // console.log(`/uploads/${req.file.filename}`);
    
 
@@ -13,7 +15,11 @@ const addProductController=async(req,res)=>{
       let product=new Product({
          name:name,
          des:des,
-         image:`/uploads/${req.file.filename}`
+         image:`/uploads/${req.file.filename}`,
+         regularprice:regularprice,
+         sellprice:sellprice,
+         slug:slug
+
       })
       product.save()
       res.send({success:"Product has been created"})

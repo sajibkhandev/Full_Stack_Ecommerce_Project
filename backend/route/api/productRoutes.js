@@ -4,6 +4,7 @@ const addSubCategoryController = require('../../controllers/addSubCategoryContro
 const viewCategoryController = require('../../controllers/viewCategoryController')
 const viewSubCategoryController = require('../../controllers/viewSubCategoryController')
 const addProductController = require('../../controllers/addProductController')
+const viewProductController = require('../../controllers/viewProductController')
 const _ =express.Router()
 const multer  = require('multer')
 
@@ -31,6 +32,7 @@ _.post('/addproduct',upload.single('avatar'),addProductController)
 
 _.get('/viewcategory',viewCategoryController)
 _.get('/viewsubcategory',viewSubCategoryController)
+_.get('/viewproduct',viewProductController)
 
 
 module.exports=_

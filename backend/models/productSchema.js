@@ -14,7 +14,19 @@ const productSchema=new Schema({
     image:{
         type:String
 
-    }
+    },
+    regularprice:{
+        type:String,
+        required:true
+    },
+    sellprice:{
+        type:String,
+        
+    },
+    slug:{
+        type:String,
+        
+    },
    
 
 })
