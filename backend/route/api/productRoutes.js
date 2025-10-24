@@ -7,6 +7,7 @@ const addProductController = require('../../controllers/addProductController')
 const viewProductController = require('../../controllers/viewProductController')
 const _ =express.Router()
 const multer  = require('multer')
+const addVariantController = require('../../controllers/addVariantController')
 
 
 const storage = multer.diskStorage({
@@ -27,6 +28,7 @@ const upload = multer({ storage: storage })
 _.post('/addcategory',addCategoryController)
 _.post('/addsubcategory',addSubCategoryController)
 _.post('/addproduct',upload.single('avatar'),addProductController)
+_.post('/addvariant',upload.single('avatar'),addVariantController)
 
 
 

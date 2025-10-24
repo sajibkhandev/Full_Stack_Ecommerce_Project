@@ -42,6 +42,16 @@ const items = [
         label: 'View Product',
 
       },
+      {
+        key: '/home/addvariant',
+        label: 'Add Variant',
+
+      },
+      {
+        key: '/home/viewvariant',
+        label: 'View Variant',
+
+      },
     ],
   },
   {
