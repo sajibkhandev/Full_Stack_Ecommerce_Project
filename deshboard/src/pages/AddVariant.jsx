@@ -13,7 +13,7 @@ const AddVariant = () => {
     console.log(values.image, "image");
 
 
-    let data = await axios.post('http://localhost:3000/api/v1/product/addvariant', {
+    let data = await axios.post('http://localhost:8000/api/v1/product/addvariant', {
       name: values.name,
       avatar: image,
       regularprice: values.regularprice,
@@ -49,7 +49,7 @@ const AddVariant = () => {
 
   useEffect(() => {
     async function product() {
-      let data = await axios.get("http://localhost:3000/api/v1/product/viewproduct")
+      let data = await axios.get("http://localhost:8000/api/v1/product/viewproduct")
 
       let arr = []
 

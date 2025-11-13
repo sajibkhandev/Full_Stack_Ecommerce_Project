@@ -10,7 +10,7 @@ const AddCategory = () => {
 
   const onFinish = async values => {
 
-    let data = await axios.post('http://localhost:3000/api/v1/product/addcategory', {
+    let data = await axios.post('http://localhost:8000/api/v1/product/addcategory', {
       name: values.name,
       ownerId: userInfo.id
 

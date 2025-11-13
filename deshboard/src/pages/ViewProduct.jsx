@@ -16,7 +16,7 @@ const ViewProduct = () => {
     dataIndex: 'image',
     key: 'image',
      render: (_, record) => (
-        <img className='w-[30px]' src={`http://localhost:3000${_}`} alt="" />
+        <img className='w-[30px]' src={`http://localhost:8000${_}`} alt="" />
      
    
      
@@ -50,7 +50,7 @@ const ViewProduct = () => {
  useEffect(() => {
 
         async function categoryData() {
-            let data = await axios.get("http://localhost:3000/api/v1/product/viewproduct")
+            let data = await axios.get("http://localhost:8000/api/v1/product/viewproduct")
             let arr = []
             data.data.map(item => {
                 arr.push(

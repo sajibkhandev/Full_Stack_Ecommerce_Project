@@ -33,7 +33,7 @@ const ViewSubCategory = () => {
     useEffect(() => {
 
         async function subcategoryData() {
-            let data = await axios.get("http://localhost:3000/api/v1/product/viewsubcategory")
+            let data = await axios.get("http://localhost:8000/api/v1/product/viewsubcategory")
             let arr = []
             data.data.map(item => {
                 arr.push(

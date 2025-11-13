@@ -7,7 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 const ForgetPassword = () => {
   const onFinish = async values => {
     // console.log(values.email);
-    let data = await axios.post('http://localhost:3000/api/v1/authentication/forgetpassword', {
+    let data = await axios.post('http://localhost:8000/api/v1/authentication/forgetpassword', {
       email: values.email,
     }
 

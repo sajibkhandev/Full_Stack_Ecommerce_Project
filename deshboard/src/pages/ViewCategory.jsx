@@ -33,7 +33,7 @@ const ViewCategory = () => {
     useEffect(() => {
 
         async function categoryData() {
-            let data = await axios.get("http://localhost:3000/api/v1/product/viewcategory")
+            let data = await axios.get("http://localhost:8000/api/v1/product/viewcategory")
             let arr = []
             data.data.map(item => {
                 arr.push(

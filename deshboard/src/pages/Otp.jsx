@@ -11,7 +11,7 @@ const Otp = () => {
 
   useEffect(() => {
     async function otpDatasend() {
-      let data = await axios.post('http://localhost:3000/api/v1/authentication/otp', {
+      let data = await axios.post('http://localhost:8000/api/v1/authentication/otp', {
         otp: params.otpcode,
         email: params.email
       }

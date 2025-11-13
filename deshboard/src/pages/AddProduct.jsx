@@ -11,7 +11,7 @@ const AddProduct = () => {
       console.log(values.image,"image");
       
        
-   let data = await axios.post('http://localhost:3000/api/v1/product/addproduct', {
+   let data = await axios.post('http://localhost:8000/api/v1/product/addproduct', {
       name: values.name,
       des:values.des,
       avatar:image,

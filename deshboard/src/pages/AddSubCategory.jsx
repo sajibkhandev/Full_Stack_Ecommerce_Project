@@ -10,7 +10,7 @@ const AddSubCategory = () => {
    let userInfo = useSelector(state => state.activeuser.value)
   const onFinish = async values => {
 
-    let data = await axios.post('http://localhost:3000/api/v1/product/addsubcategory', {
+    let data = await axios.post('http://localhost:8000/api/v1/product/addsubcategory', {
       name: values.name,
       ownerId: userInfo.id,
       categoryId:categoryId
@@ -46,7 +46,7 @@ const AddSubCategory = () => {
 
   useEffect(() => {
     async function myData() {
-      let data = await axios.get("http://localhost:3000/api/v1/product/viewcategory")
+      let data = await axios.get("http://localhost:8000/api/v1/product/viewcategory")
       let arr = []
       data.data.map(item => {
         arr.push(

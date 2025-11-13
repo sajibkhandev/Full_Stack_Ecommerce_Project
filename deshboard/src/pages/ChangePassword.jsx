@@ -7,7 +7,7 @@ const ChangePassword = () => {
       let navigate=useNavigate()
       let params = useParams()
       const onFinish = async values  => {
-      let data = await axios.post('http://localhost:3000/api/v1/authentication/changepassword', {
+      let data = await axios.post('http://localhost:8000/api/v1/authentication/changepassword', {
     
       email: params.email,
       password: values.password
