@@ -11,6 +11,7 @@ const Category = async ({params}) => {
     
   return (
     <div>
+      <h1 className='pb-10'>Here is All Subcategory :</h1>
         <ul>
             {posts.map(item=>(
                 <li>{item.name}</li>

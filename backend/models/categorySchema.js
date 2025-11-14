@@ -17,7 +17,14 @@ const categorySchema=new Schema({
         type:String,
         emum:["waitting","rejected","approval"],
         default:"waitting"
-    }
+    },
+    subcategorylist:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"SubCategory"
+
+        }
+    ]
 
 })
 module.exports=mongoose.model('Category', categorySchema)

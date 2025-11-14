@@ -13,7 +13,17 @@ const CategoryComponent = async () => {
       <ul>
         {
           posts.map(item=>(
-           <Link key={item._id} href={`/category/${item._id}`}> <li >{item.name}---{item.ownerId.username}</li></Link>
+           <Link key={item._id} href={`/category/${item._id}`}>
+             <li className='group'>{item.name}---{item.ownerId.username}
+                { item.subcategorylist&& item.subcategorylist.map(item2=>(
+                  <ul className='hidden group-hover:block bg-red-500 w-[150px]'>
+                  <li>{item2.name}</li>
+                  
+                </ul>
+                ))}
+           
+             </li>
+             </Link>
           ))
 
         }

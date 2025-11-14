@@ -1,4 +1,5 @@
 const SubCategory=require('../models/subCategorySchema')
+const Category=require('../models/categorySchema')
 
 
 const addSubCategoryController=async(req,res)=>{
@@ -17,6 +18,11 @@ const addSubCategoryController=async(req,res)=>{
          })
          subcategory.save()
          res.send({success:"Sub Category has been Created and wait for admin approval"})
+
+         await Category.findOneAndUpdate({_id:categoryId},{ $push: { subcategorylist: subcategory._id} }
+)
+
+
 
 
       }
