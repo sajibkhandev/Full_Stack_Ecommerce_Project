@@ -1,13 +1,17 @@
-import CategoryComponent from '@/components/categoryComponent'
-import ProductComponent from '@/components/productComponent'
-import React from 'react'
+import Banner from "@/components/banner"
+import CategoryButton from "@/components/categoryButton"
+import ProductCard from "@/components/productCard"
+
+
 
 const page = () => {
   return (
     <div>
-      <CategoryComponent/>
-      <h1 className='text-4xl font-bold'>Product </h1>
-      <ProductComponent/>
+      <Banner/>
+      <CategoryButton/>
+      <ProductCard/>
+    
+      
     </div>
   )
 }
