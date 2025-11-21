@@ -1,6 +1,7 @@
 import Banner from "@/components/banner"
 import CategoryButton from "@/components/categoryButton"
 import ProductCard from "@/components/productCard"
+import ProductComponent from "@/components/productComponent"
 
 
 
@@ -9,7 +10,8 @@ const page = () => {
     <div>
       <Banner/>
       <CategoryButton/>
-      <ProductCard/>
+      <ProductComponent/>
+      
     
       
     </div>

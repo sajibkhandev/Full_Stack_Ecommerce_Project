@@ -6,9 +6,15 @@ import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-const ProductCard = async () => {
-  const data = await fetch('http://localhost:8000/api/v1/product/viewproduct')
-  const posts = await data.json()
+const ProductCard = ({alldata}) => {
+  console.log(alldata);
+
+  let handleAddToCart=(item)=>{
+    console.log(item);
+    
+  }
+  
+  
  
 
   return (
@@ -16,18 +22,18 @@ const ProductCard = async () => {
       <Container>
         <Row>
           {
-            posts.map(item => (
-              <Col xs lg="3">
+            alldata.map(item => (
+              <Col key={item._id} xs lg="3">
                 <Card style={{ width: '18rem' }}>
                   <Card.Img variant="top" src={`http://localhost:8000${item.image}`} />
                   <Card.Body>
                     <Card.Title>{item.name}</Card.Title>
                     <Card.Text>
-                      {item.sellprice?
-                      <span><del>{item.regularprice}</del> --{item.sellprice}</span>
-                      :<span>{item.regularprice}</span>}
+                      {item.sellprice!=0?
+                      <><span className='text-red-500 font-bold text-xl'>{item.sellprice}$</span><del>{item.regularprice}$</del></>
+                      :<span className='text-red-500 font-bold text-xl'>{item.regularprice}$</span>}
                     </Card.Text>
-                    <Button variant="primary">Add To Cart</Button>
+                    <Button onClick={()=>handleAddToCart(item)} variant="primary">Add To Cart</Button>
                   </Card.Body>
                 </Card>
               </Col>
