@@ -10,6 +10,7 @@ const multer  = require('multer')
 const addVariantController = require('../../controllers/addVariantController')
 const viewSingleCategoryController = require('../../controllers/viewSingleCategoryController')
 const addToCartController = require('../../controllers/addToCartController')
+const viewAddToCartController = require('../../controllers/viewAddToCartController')
 
 
 const storage = multer.diskStorage({
@@ -39,6 +40,7 @@ _.get('/viewcategory',viewCategoryController)
 _.get('/viewsubcategory',viewSubCategoryController)
 _.get('/viewproduct',viewProductController)
 _.get('/viewsinglecategory',viewSingleCategoryController)
+_.get('/vieweaddtocart',viewAddToCartController)
 
 
 module.exports=_

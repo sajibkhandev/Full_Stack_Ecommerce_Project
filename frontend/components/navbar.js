@@ -1,4 +1,5 @@
 "use client"
+import Link from 'next/link';
 import React from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -18,7 +19,7 @@ const NavbarComponent = () => {
             <Nav.Link href="#link">Service</Nav.Link>
             <Nav.Link href="#link">About</Nav.Link>
             <Nav.Link href="#link">Contact</Nav.Link>
-            <Nav.Link href="#link">Blog</Nav.Link>
+            <Link href="/cart">Cart</Link>
            
           </Nav>
         </Navbar.Collapse>
