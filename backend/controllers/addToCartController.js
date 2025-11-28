@@ -2,6 +2,8 @@ const AddTopCart=require('../models/addToCartSchema')
 
 const addToCartController=async(req,res)=>{
     let {productId,quantity,cartOwnerId}=req.body
+    console.log(req.query.type);
+    
 
    let existingProduct= await AddTopCart.find({productId:productId})
 
@@ -9,12 +11,21 @@ const addToCartController=async(req,res)=>{
 
    if(existingProduct.length>0){
 
-    await AddTopCart.findOneAndUpdate({_id:existingProduct[0]._id},{quantity:existingProduct[0].quantity+quantity},{new:true})
+      if(req.query.type=="increment"){
+          await AddTopCart.findOneAndUpdate({_id:existingProduct[0]._id},{quantity:existingProduct[0].quantity+quantity},{new:true})
+          res.send("the Product already has.now added only Quantiy")
 
-    res.send("the Product already has.now added only Quantiy")
+      }else if(req.query.type=="decrement"){
+         
+         if(existingProduct[0].quantity>1){
 
+            await AddTopCart.findOneAndUpdate({_id:existingProduct[0]._id},{quantity:existingProduct[0].quantity-quantity},{new:true})
+           res.send("the Product already has.now added only Quantiy")
+         }
+         
+          
 
-
+      }
    
    }else{
      let cart=new AddTopCart({
