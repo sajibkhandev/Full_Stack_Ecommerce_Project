@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Link from 'next/link';
 
 const ProductCard = ({ alldata }) => {
   console.log(alldata);
@@ -45,7 +46,7 @@ const ProductCard = ({ alldata }) => {
                 <Card style={{ width: '18rem' }}>
                   <Card.Img variant="top" src={`http://localhost:8000${item.image}`} />
                   <Card.Body>
-                    <Card.Title>{item.name}</Card.Title>
+                    <Link href={`/singleproduct/${item._id}`}><Card.Title>{item.name}</Card.Title></Link>
                     <Card.Text>
                       {item.sellprice != 0 ?
                         <><span className='text-red-500 font-bold text-xl'>{item.sellprice}$</span><del>{item.regularprice}$</del></>
