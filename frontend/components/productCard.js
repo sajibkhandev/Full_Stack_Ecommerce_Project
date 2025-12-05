@@ -8,7 +8,7 @@ import Col from 'react-bootstrap/Col';
 import Link from 'next/link';
 
 const ProductCard = ({ alldata }) => {
-  console.log(alldata);
+  // console.log(alldata);
 
   let handleAddToCart = (item) => {
     // console.log(item._id);
