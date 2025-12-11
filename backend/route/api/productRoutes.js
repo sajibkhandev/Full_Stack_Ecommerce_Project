@@ -11,6 +11,7 @@ const addVariantController = require('../../controllers/addVariantController')
 const viewSingleCategoryController = require('../../controllers/viewSingleCategoryController')
 const addToCartController = require('../../controllers/addToCartController')
 const viewAddToCartController = require('../../controllers/viewAddToCartController')
+const addDiscountController = require('../../controllers/addDiscountController')
 
 
 const storage = multer.diskStorage({
@@ -33,6 +34,7 @@ _.post('/addsubcategory',addSubCategoryController)
 _.post('/addproduct',upload.single('avatar'),addProductController)
 _.post('/addvariant',upload.single('avatar'),addVariantController)
 _.post('/addtocart',addToCartController)
+_.post('/adddiscount',addDiscountController)
 
 
 
